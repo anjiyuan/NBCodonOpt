@@ -1,20 +1,13 @@
 # Helpful article
 
 http://geekyplatypus.com/packaging-and-serving-your-java-application-with-docker/
+https://stackoverflow.com/questions/66806582/tomcat-10-0-4-doesnt-load-servlets-webservlet-classes-with-404-error
 
 # Keywords
 
-Java 17
+Java 11
 Tomcat 10
 Docker
-
-# First time: Create the web application scaffold
-
-mvn archetype:generate \
--DgroupId=au.edu.qut.nbcodonopt \
--DartifactId=NBCodonOpt \
--DarchetypeArtifactId=maven-archetype-webapp \
--DinteractiveMode=false
 
 # Package the war
 
@@ -33,4 +26,4 @@ docker run -it \
 -p 8080:8080 \
 -v $(pwd)/target/NBCodonOpt.war:/usr/local/tomcat/webapps/ROOT.war \
 -v $(pwd)/target/NBCodonOpt:/usr/local/tomcat/webapps/ROOT \
-tomcat:jdk17-openjdk-slim
+tomcat
