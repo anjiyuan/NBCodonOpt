@@ -16,19 +16,20 @@
             function loadResult(){
                 document.getElementById("submit").disabled= true;
                 var xmlhttp;
-                var URL="condonServlet";
+                var URL="/condon";
                 URL = URL + "?textbox1=" + document.getElementById('textbox1').value;
                 URL = URL + "&seq=" + document.getElementById('seq').value;
                 xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function (){
                     if (xmlhttp.status == 200) {
                         document.getElementById("output").innerHTML = xmlhttp.responseText;
-                        document.getElementById("submit").disabled = false;
-                        document.getElementById("submit").disabled= false;
+                        document.getElementById("submit").disabled=false;
+                        document.getElementById("submit").disabled=false;
                     }
                 }
                 xmlhttp.open("GET", URL, true);
                 xmlhttp.send();
+                document.getElementById("submit").disabled=false;
         }
         </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
